@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CPlayer : MonoBehaviour {
-
-    public CLovePower lovePower;
+    
+    [SerializeField] private CLoveFireManager loveFireManager;
     Rigidbody rigidBody;
     private float x;
     private float y;
@@ -14,7 +14,7 @@ public class CPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        lovePower = GetComponent<CLovePower>();
+        loveFireManager = GetComponent<CLoveFireManager>();
         this.rigidBody = GetComponent<Rigidbody>();
 
         this.x = 0.0f;
@@ -34,6 +34,11 @@ public class CPlayer : MonoBehaviour {
             this.jumpFlag = true;
         }
 
+        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+            Debug.Log("発射準備");
+            loveFireManager.FireCreate();
+        }
+
 	}
 
     public void AutoMove() {
@@ -42,18 +47,6 @@ public class CPlayer : MonoBehaviour {
         this.y = this.transform.position.y;
 
         this.transform.position = new Vector2(this.x + moveSpeed, this.y);
-
-    }
-
-    public void LoveFire() {
-
-        /*if(lovePower.lovePower <= 0) {
-            return;
-        }*/
-
-        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-
-        }
 
     }
 
