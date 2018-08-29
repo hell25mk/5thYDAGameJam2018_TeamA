@@ -24,3 +24,24 @@ sysinfo.txt
 *.ide-wal
 *.ide-shm
 *.lock
+*.config
+*.aspx
+*.browser
+*.dll
+*.resS
+*.assets
+*.info
+*.xml
+*.exe
+*.ini
+*.map
+*.zip
+*.7z
+Game/Mono/etc/mono/config
+Game/LovePower_Data/level2
+Game/LovePower_Data/level0
+Game/LovePower_Data/globalgamemanagers
+Game/LovePower_Data/Resources/unity default resources
+Game/LovePower_Data/level3
+Game/LovePower_Data/level1
+Game/LovePower_Data/Resources/unity_builtin_extra
