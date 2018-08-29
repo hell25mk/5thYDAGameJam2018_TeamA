@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CPlayer : MonoBehaviour {
     
-    [SerializeField] private CLoveFireManager loveFireManager;
-    Rigidbody rigidBody;
+    private CLoveFireManager loveFireManager;
+    [SerializeField] private KeyCode keyAttack;
+    [SerializeField] private KeyCode keyJump;
+
+    private Rigidbody rigidBody;
     private float x;
     private float y;
     private float moveSpeed;
@@ -14,7 +17,7 @@ public class CPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        loveFireManager = GetComponent<CLoveFireManager>();
+        loveFireManager = GameObject.Find("LoveFireManager").GetComponent<CLoveFireManager>();
         this.rigidBody = GetComponent<Rigidbody>();
 
         this.x = 0.0f;
@@ -29,14 +32,13 @@ public class CPlayer : MonoBehaviour {
 
         AutoMove();
 
-        if(Input.GetKeyDown("space") && !this.jumpFlag) {
+        if(Input.GetKeyDown(keyJump) && !this.jumpFlag) {
             this.rigidBody.AddForce(Vector2.up * 250);
             this.jumpFlag = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-            Debug.Log("発射準備");
-            loveFireManager.FireCreate();
+        if(Input.GetKeyDown(keyAttack)) {
+            loveFireManager.FireCreate(this.transform);
         }
 
 	}

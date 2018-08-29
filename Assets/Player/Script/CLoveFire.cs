@@ -11,7 +11,7 @@ public class CLoveFire : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        moveSpeed = 0.3f;
+        moveSpeed = 0.2f;
 		
 	}
 	

@@ -38,7 +38,7 @@ public class CLovePower : MonoBehaviour {
 
     public bool LovePowerDown(float downLovePower) {
 
-        if(lovePower <= downLovePower) {
+        if(lovePower < downLovePower) {
             return false;
         }
 
