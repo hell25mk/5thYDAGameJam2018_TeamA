@@ -50,4 +50,10 @@ public class CLovePower : MonoBehaviour {
         return true;
     }
 
+    public void LovePowerUp(float upLovePower) {
+
+        lovePower += upLovePower;
+
+    }
+
 }
