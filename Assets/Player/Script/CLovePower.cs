@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CLovePower : MonoBehaviour {
 
     [SerializeField] private Text lpPoint;
+    [SerializeField] private Slider lpSlider;
     private float lovePower;
     private float timer;
 
@@ -23,6 +24,8 @@ public class CLovePower : MonoBehaviour {
         this.lpPoint.text = "LP" + this.lovePower.ToString("f1") + "%";
 
         TimePowerDown();
+
+        this.lpSlider.value = lovePower;
 
 	}
 
