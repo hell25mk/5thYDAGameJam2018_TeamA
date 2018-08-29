@@ -32,10 +32,12 @@ public class CHart : MonoBehaviour {
 
         if(collision.gameObject.tag == "PlayerWoman") {
             p1.LovePowerUp(20.0f);
+            Destroy(this.gameObject);
         }
 
         if(collision.gameObject.tag == "PlayerMan") {
             p2.LovePowerUp(20.0f);
+            Destroy(this.gameObject);
         }
 
     }
