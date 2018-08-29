@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CPlayer : MonoBehaviour {
     
     private CLoveFireManager loveFireManager;
     [SerializeField] private KeyCode keyAttack;
     [SerializeField] private KeyCode keyJump;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpSpeed;
 
     private Rigidbody rigidBody;
     private float x;
     private float y;
-    private float moveSpeed;
+    
     private bool jumpFlag;
 
 	// Use this for initialization
@@ -23,7 +25,6 @@ public class CPlayer : MonoBehaviour {
 
         this.x = 0.0f;
         this.y = 1.0f;
-        this.moveSpeed = 0.05f;
         this.jumpFlag = false;
 
 	}

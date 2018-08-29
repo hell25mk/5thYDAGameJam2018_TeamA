@@ -8,7 +8,9 @@ public class CCameraMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+        this.transform.position = new Vector3(player.transform.position.x, 0.0f, -10.0f);
+
 	}
 	
 	// Update is called once per frame
@@ -17,4 +19,5 @@ public class CCameraMove : MonoBehaviour {
         this.transform.position = new Vector3(this.transform.position.x + 0.05f, 0.0f, -10.0f);
 
 	}
+
 }
