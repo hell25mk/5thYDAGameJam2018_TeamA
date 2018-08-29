@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CLovePower : MonoBehaviour {
 
     [SerializeField] private Text lpPoint;
+    [SerializeField] private Slider lpSlider;
     private float lovePower;
     private float timer;
 
@@ -24,6 +25,8 @@ public class CLovePower : MonoBehaviour {
 
         TimePowerDown();
 
+        this.lpSlider.value = lovePower;
+
 	}
 
     public void TimePowerDown() {
@@ -38,7 +41,7 @@ public class CLovePower : MonoBehaviour {
 
     public bool LovePowerDown(float downLovePower) {
 
-        if(lovePower <= downLovePower) {
+        if(lovePower < downLovePower) {
             return false;
         }
 
