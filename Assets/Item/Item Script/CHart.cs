@@ -28,7 +28,7 @@ public class CHart : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerEnter(Collider collision) {
 
         if(collision.gameObject.tag == "PlayerWoman") {
             p1.LovePowerUp(20.0f);
