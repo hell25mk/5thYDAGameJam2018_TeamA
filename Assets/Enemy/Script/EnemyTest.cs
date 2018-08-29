@@ -8,11 +8,12 @@ public class EnemyTest : MonoBehaviour {
 	private float y;
 	private int []EnemyMovePatern;
 	private int MovePaternNum;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		
-		EnemyMovePatern = new int[] { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 };
+		animator = GetComponent<Animator>();
+		EnemyMovePatern = new int[] { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 };
 		MovePaternNum = 0;
 
 
@@ -29,13 +30,16 @@ public class EnemyTest : MonoBehaviour {
 
 		switch (EnemyMovePatern[MovePaternNum]) {
 		case 1: 
-			this.transform.position = new Vector2 (x - 0.01f, y);
+			animator.SetBool ("EnemyLeftWalk", true);
+			this.transform.position = new Vector2 (x - 0.05f, y);
 			MovePaternNum++;
 			break;
 
 		case 2:
-			this.transform.position = new Vector2 (x + 0.01f, y);
+			animator.SetBool ("EnemyRightWalk", true);
+			this.transform.position = new Vector2 (x + 0.05f, y);
 			MovePaternNum++;
+
 			break;
 		}
 		if (MovePaternNum > EnemyMovePatern.Length-2) {
