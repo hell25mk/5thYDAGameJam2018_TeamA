@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Title : MonoBehaviour {
+public class CTitle : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
@@ -17,6 +17,10 @@ public class Title : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.Space)) {
             SceneManager.LoadScene("Stage1");
+        }
+
+        if(Input.GetKey(KeyCode.Escape)) {
+            Application.Quit();
         }
 
     }
