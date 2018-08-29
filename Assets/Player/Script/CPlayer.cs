@@ -7,6 +7,7 @@ public class CPlayer : MonoBehaviour {
     private CLoveFireManager loveFireManager;
     [SerializeField] private KeyCode keyAttack;
     [SerializeField] private KeyCode keyJump;
+    [SerializeField] private float jumpSpeed;
 
     private Rigidbody rigidBody;
     private float x;
@@ -33,7 +34,7 @@ public class CPlayer : MonoBehaviour {
         AutoMove();
 
         if(Input.GetKeyDown(keyJump) && !this.jumpFlag) {
-            this.rigidBody.AddForce(Vector2.up * 250);
+            this.rigidBody.AddForce(Vector2.up * jumpSpeed);
             this.jumpFlag = true;
         }
 
